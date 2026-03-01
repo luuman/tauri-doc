@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="zh" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-basic/03" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">创建项目 | Tauri Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://luuman.github.io/tauri-doc/docs/basic/03"><meta data-rh="true" property="og:locale" content="zh"><meta data-rh="true" name="docusaurus_locale" content="zh"><meta data-rh="true" name="docsearch:language" content="zh"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="创建项目 | Tauri Docs"><meta data-rh="true" name="description" content="我们可以使用下面命令，利用 create-tauri-app 创建一个新的项目"><meta data-rh="true" property="og:description" content="我们可以使用下面命令，利用 create-tauri-app 创建一个新的项目"><link data-rh="true" rel="icon" href="/tauri-doc/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luuman.github.io/tauri-doc/docs/basic/03"><link data-rh="true" rel="alternate" href="https://luuman.github.io/tauri-doc/docs/basic/03" hreflang="zh"><link data-rh="true" rel="alternate" href="https://luuman.github.io/tauri-doc/docs/basic/03" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"创建项目","item":"https://luuman.github.io/tauri-doc/docs/basic/03"}]}</script><link rel="alternate" type="application/rss+xml" href="/tauri-doc/blog/rss.xml" title="Tauri Docs RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/tauri-doc/blog/atom.xml" title="Tauri Docs Atom Feed"><link rel="stylesheet" href="/tauri-doc/assets/css/styles.c3b0114a.css">
+<script src="/tauri-doc/assets/js/runtime~main.da0e585d.js" defer="defer"></script>
+<script src="/tauri-doc/assets/js/main.9db90204.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"dark"),document.documentElement.setAttribute("data-theme-choice",t||"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav class="navbar navbar--fixed-top navbar_MONK" role="navigation" aria-label="Main"><div class="navbarInner_ASTH"><div class="navbarLeft_pUmY"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="brand_SXL9" href="/tauri-doc/"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="var(--ifm-color-primary)"></rect><path d="M7 8.5h10M7 12h7M7 15.5h10" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg><span class="brandTitle_XbyU">Tauri</span></a><div class="dropdown_GrgZ"><button class="dropdownToggle_Nf_z">全部站点<svg class="dropdownArrow_Eka8" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><ul class="dropdownMenu_zsxH"><li><a href="https://luuman.github.io/docs-workspace/docs" class="dropdownMenuItem_VBaP">Workspace</a></li><li><a href="https://luuman.github.io/moltbot-doc/docs" class="dropdownMenuItem_VBaP">Moltbot</a></li><li><a href="https://luuman.github.io/claude-doc/docs" class="dropdownMenuItem_VBaP">Claude</a></li><li><a href="https://luuman.github.io/electron-doc/docs" class="dropdownMenuItem_VBaP">Electron</a></li><li><a href="https://luuman.github.io/matrx-doc/docs" class="dropdownMenuItem_VBaP">Matrx</a></li><li><a href="https://luuman.github.io/brainboard-doc/docs" class="dropdownMenuItem_VBaP">Brainboard</a></li><li><a href="https://luuman.github.io/synology-doc/docs" class="dropdownMenuItem_VBaP">Synology</a></li><li><a href="https://luuman.github.io/codex-doc/docs" class="dropdownMenuItem_VBaP">Codex</a></li><li><a href="https://luuman.github.io/ai-doc/docs" class="dropdownMenuItem_VBaP">AI</a></li></ul></div></div><div class="navbarCenter_Zdr3"><div class="root_OF3s"><span class="icon_UcOK" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span><div class="slot__FGx"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="搜索" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div class="navbarRight_q16u"><a class="navLink_RnnM" href="/tauri-doc/docs">Docs</a><a class="navLink_RnnM" href="/tauri-doc/blog">Blog</a><button class="themeToggle_zD_x" aria-label="Switch to light theme" title="Light"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button></div></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/tauri-doc/docs/basic/01"><span title="basic" class="categoryLinkLabel_W154">basic</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/01"><span title="Tauri 初探" class="linkLabel_WmDU">Tauri 初探</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/02"><span title="环境搭建" class="linkLabel_WmDU">环境搭建</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/tauri-doc/docs/basic/03"><span title="创建项目" class="linkLabel_WmDU">创建项目</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/04"><span title="04" class="linkLabel_WmDU">04</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/05"><span title="集成 WebAssembly" class="linkLabel_WmDU">集成 WebAssembly</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/06"><span title="跨平台编译" class="linkLabel_WmDU">跨平台编译</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/07"><span title="07" class="linkLabel_WmDU">07</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/08"><span title="基本配置" class="linkLabel_WmDU">基本配置</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/09"><span title="透明及磨砂背景" class="linkLabel_WmDU">透明及磨砂背景</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/10"><span title="系统文件" class="linkLabel_WmDU">系统文件</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/11"><span title="应用菜单" class="linkLabel_WmDU">应用菜单</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/12"><span title="开发模式下忽略文件" class="linkLabel_WmDU">开发模式下忽略文件</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/13"><span title="自动通知应用升级" class="linkLabel_WmDU">自动通知应用升级</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/14"><span title="Web URL 与桌面应用的一次邂逅" class="linkLabel_WmDU">Web URL 与桌面应用的一次邂逅</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/15"><span title="15" class="linkLabel_WmDU">15</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/16"><span title="16" class="linkLabel_WmDU">16</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/17"><span title="HTTP 客户端" class="linkLabel_WmDU">HTTP 客户端</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/18"><span title="18" class="linkLabel_WmDU">18</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/19"><span title="19" class="linkLabel_WmDU">19</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/20"><span title="Splashscreen" class="linkLabel_WmDU">Splashscreen</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/tauri-doc/docs/guide"><span title="开始" class="categoryLinkLabel_W154">开始</span></a><button aria-label="折叠侧边栏分类 &#x27;开始&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/Docment"><span title="Docment" class="linkLabel_WmDU">Docment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/account"><span title="account" class="linkLabel_WmDU">account</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/development-guidelines"><span title="development-guidelines" class="linkLabel_WmDU">development-guidelines</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide"><span title="简介" class="linkLabel_WmDU">简介</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/package"><span title="环境搭建" class="linkLabel_WmDU">环境搭建</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/project-introduction"><span title="project-introduction" class="linkLabel_WmDU">project-introduction</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/project-setup"><span title="创建项目" class="linkLabel_WmDU">创建项目</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/project-structure"><span title="project-structure" class="linkLabel_WmDU">project-structure</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/signature-build"><span title="签名包" class="linkLabel_WmDU">签名包</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tauri-doc/docs"><span title="index" class="linkLabel_WmDU">index</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/tauri-doc/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">basic</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">创建项目</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>创建项目</h1></header>
+<p>我们可以使用下面命令，利用 create-tauri-app 创建一个新的项目</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>环境</th><th>命令</th></tr></thead><tbody><tr><td>Bash</td><td><code>sh &lt;(curl https://create.tauri.app/sh)</code></td></tr><tr><td>PowerShell</td><td><code>irm https://create.tauri.app/ps | iex</code></td></tr><tr><td>npm</td><td><code>npm create tauri-app@latest</code></td></tr><tr><td>Yarn</td><td><code>yarn create tauri-app</code></td></tr><tr><td>pnpm</td><td><code>pnpm create tauri-app</code></td></tr><tr><td>Deno</td><td><code>deno run -A npm:create-tauri-app</code></td></tr><tr><td>Bun</td><td><code>bun create tauri-app</code></td></tr><tr><td>Cargo</td><td><code>cargo install create-tauri-app --locked</code> <code>cargo create-tauri-app</code></td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="创建">创建<a href="#创建" class="hash-link" aria-label="创建的直接链接" title="创建的直接链接" translate="no">​</a></h2>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain"># 快速创建项目</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">➜  Tauri  yarn create tauri-app</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">➤ YN0000: · Yarn 4.9.2</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">➤ YN0000: ┌ Resolution step</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">➤ YN0085: │ + create-tauri-app@npm:4.5.9, and 11 more.</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">➤ YN0000: └ Completed</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">➤ YN0000: ┌ Fetch step</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">➤ YN0013: │ 3 packages were added to the project (+ 3.09 MiB).</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">➤ YN0000: └ Completed</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">➤ YN0000: ┌ Link step</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">➤ YN0000: └ Completed</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">➤ YN0000: · Done in 0s 81ms</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">[####] 4/4? Project name (tauri-app) › tauri-app # 项目名称</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Project name · tauri-app</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">? Identifier (com.tauri-app.app) › com.tauri-app.app # 标识符</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Identifier · com.tauri-app.app</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">? Choose which language to use for your frontend › # 前端语言</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">❯ TypeScript / JavaScript  (pnpm, yarn, npm, deno, bun)</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  Rust</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  .NET</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Choose which language to use for your frontend · TypeScript / JavaScript - (pnpm, yarn, npm, deno, bun)</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">? Choose your package manager › # 包管理器</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  yarn</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">❯ pnpm</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  npm</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  deno</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  bun</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Choose your package manager · yarn</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">? Choose your UI template › # UI模板</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  Vanilla</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">❯ Vue</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  Svelte</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  React</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  Solid</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  Angular</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  Preact</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Choose your UI template · Vue - (https://vuejs.org/)</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">? Choose your UI flavor › # UI 风格</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">❯ TypeScript</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  JavaScript</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Choose your UI flavor · TypeScript</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Project name · tauri-app</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Identifier · com.tauri-app.app</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Choose which language to use for your frontend · TypeScript / JavaScript - (pnpm, yarn, npm, deno, bun)</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Choose your package manager · pnpm</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Choose your UI template · Vue - (https://vuejs.org/)</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">✔ Choose your UI flavor · TypeScript</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">Template created! To get started run:</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  cd tauri-app</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  pnpm install</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  pnpm tauri android init</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  pnpm tauri ios init</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">For Desktop development, run:</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  pnpm tauri dev</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">For Android development, run:</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  pnpm tauri android dev</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">For iOS development, run:</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  pnpm tauri ios dev</span><br></span></code></pre></div></div>
+<blockquote>
+<p>项目结构</p>
+</blockquote>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain">[tauri-app]                      # 项目名称</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├─ [node_modules]                # 前端依赖</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├─ [dist]                        # 打包后的项目文件</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├─ [src]                         # 前端源代码</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├─ [src-tauri]                   # Tauri 源代码</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">│    ├─ [icons]                  # 应用程序图标</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">│    ├─ [src]                    # Tauri App 源代码，例如系统菜单，托盘，插件配置等</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">│    ├─ [target]                 # 构建的产物会被放入此文件夹中，target 目录的结构取决于是否使用 --target 标志为特定的平台构建</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">│    ├─ build.rs                 # Tauri 构建应用</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">│    ├─ Cargo.lock               # 包含了依赖的精确描述信息，类似于 yarn.lock 或 package-lock.json</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">│    ├─ Cargo.toml               # Tauri (Rust) 项目清单</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">│    └─ tauri.conf.json          # 自定义 Tauri 应用程序的配置文件，例如应用程序窗口尺寸，应用名称，权限等</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├─ index.html                    # 项目主界面</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├─ package.json                  # 前端项目清单</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├─ tsconfig.json                 # typescript 配置文件</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├─ vite.config.ts                # vite 配置文件</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├─ yarn.lock                     # 前端依赖的精确描述信息</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">└─ ...                           # 其他</span><br></span></code></pre></div></div>
+<p>下面是一个符合 Markdown 格式的 <strong>Tauri 项目文件拓扑图（Tree 结构）</strong>，用于清晰展示项目层级关系，适合插入到 <code>README.md</code> 或文档中：</p>
+<hr>
+<div class="language-md codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-md codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token title important punctuation" style="color:#C792EA">#</span><span class="token title important" style="color:#D6DEEB"> 📁 Tauri 项目文件拓扑图</span><br></span></code></pre></div></div>
+<p>tauri-app/
+├── node_modules/ # 前端依赖（自动生成）
+├── dist/ # 前端构建产物（Vite build 输出）
+├── src/ # 前端源代码
+│ ├── App.vue / main.ts # 前端主入口
+│ ├── components/ # 通用组件
+│ └── assets/ # 静态资源
+├── src-tauri/ # Tauri 后端（Rust）
+│ ├── icons/ # 应用图标（.png/.icns/.ico）
+│ ├── src/
+│ │ ├── main.rs # Rust 主入口
+│ │ └── *.rs # 其他模块：窗口、托盘、插件等
+│ ├── target/ # 构建产物（Rust 自动生成）
+│ ├── build.rs # 可选构建脚本
+│ ├── Cargo.toml # Rust 项目配置（依赖、元信息）
+│ ├── Cargo.lock # Rust 依赖锁定文件
+│ └── tauri.conf.json # Tauri 应用配置（窗口、权限等）
+├── index.html # 前端页面入口（Vite 使用）
+├── package.json # 前端依赖与脚本管理
+├── vite.config.ts # Vite 构建配置文件
+├── tsconfig.json # TypeScript 配置
+├── yarn.lock / package-lock.json # 依赖版本锁定
+└── README.md # 项目说明文档</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">&gt; 💡 建议使用 `tree -I &#x27;node_modules|target|dist&#x27;` 命令自动生成简化版本，然后手动补充注释。</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">---</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">如你希望用图形方式（ASCII 拓扑图 + 图例说明）或 Mermaid 图表示，我也可以帮你转换。需要吗？</span><br></span></code></pre></div></div>
+<p>下面是对一个典型 <strong>Tauri 项目结构</strong> 的详细介绍，结合你提供的目录结构，我会逐层说明每个部分的作用与用途：</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-根目录tauri-app">🧾 根目录（<code>tauri-app/</code>）<a href="#-根目录tauri-app" class="hash-link" aria-label="-根目录tauri-app的直接链接" title="-根目录tauri-app的直接链接" translate="no">​</a></h2>
+<p>这是你的 Tauri 项目的根目录，既包含前端工程，也包含 Rust 后端（Tauri）部分。</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-node_modules">📁 <code>node_modules/</code><a href="#-node_modules" class="hash-link" aria-label="-node_modules的直接链接" title="-node_modules的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>作用</strong>：存放前端依赖包（通过 <code>yarn</code>、<code>npm</code> 或 <code>pnpm</code> 安装）。</li>
+<li class=""><strong>生成方式</strong>：执行 <code>yarn install</code> 或 <code>npm install</code> 后生成。</li>
+<li class=""><strong>不应修改</strong>：通常被 <code>.gitignore</code> 忽略。</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-dist">📁 <code>dist/</code><a href="#-dist" class="hash-link" aria-label="-dist的直接链接" title="-dist的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>作用</strong>：存放前端项目构建产物（如 HTML、JS、CSS），用于最终集成到 Tauri 应用中。</li>
+<li class=""><strong>来源</strong>：由构建工具（如 <code>Vite</code>）产出，运行 <code>yarn build</code> 或 <code>vite build</code> 后生成。</li>
+<li class=""><strong>用途</strong>：Tauri 打包时会读取这个目录来嵌入 Web UI。</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-src">📁 <code>src/</code><a href="#-src" class="hash-link" aria-label="-src的直接链接" title="-src的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>作用</strong>：前端源代码目录。</p>
+</li>
+<li class="">
+<p><strong>内容</strong>：包含 Vue/React/Svelte 等前端框架的页面组件、逻辑、样式文件等。</p>
+</li>
+<li class="">
+<p><strong>示例结构</strong>（Vue 项目）：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain">src/</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├── App.vue</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├── main.ts</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">├── components/</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">└── assets/</span><br></span></code></pre></div></div>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-src-tauri-核心目录">📁 <code>src-tauri/</code>（🚀 核心目录）<a href="#-src-tauri-核心目录" class="hash-link" aria-label="-src-tauri-核心目录的直接链接" title="-src-tauri-核心目录的直接链接" translate="no">​</a></h3>
+<p>这个目录是 <strong>Tauri 框架的核心区域</strong>，包含了所有与系统层交互的代码、配置与构建脚本。</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="-src-tauriicons">📁 <code>src-tauri/icons/</code><a href="#-src-tauriicons" class="hash-link" aria-label="-src-tauriicons的直接链接" title="-src-tauriicons的直接链接" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>作用</strong>：存放应用程序图标（<code>.png</code>, <code>.ico</code>, <code>.icns</code> 等格式）。</li>
+<li class=""><strong>用途</strong>：Tauri 在构建应用程序时会使用这些图标生成可执行文件图标。</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="-src-taurisrc">📁 <code>src-tauri/src/</code><a href="#-src-taurisrc" class="hash-link" aria-label="-src-taurisrc的直接链接" title="-src-taurisrc的直接链接" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p><strong>作用</strong>：Rust 语言编写的 Tauri 主程序入口。</p>
+</li>
+<li class="">
+<p><strong>内容</strong>：</p>
+<ul>
+<li class=""><code>main.rs</code>：Tauri 应用的入口点，配置窗口、菜单、插件等。</li>
+<li class="">可自定义多个模块，如 <code>menu.rs</code>, <code>system.rs</code>，组织后端逻辑。</li>
+</ul>
+</li>
+<li class="">
+<p><strong>示例</strong>：</p>
+<div class="language-rust codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-rust codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token keyword" style="color:#C792EA">fn</span><span class="token plain"> </span><span class="token function-definition function" style="color:#82AAFF">main</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token namespace" style="opacity:0.7">tauri</span><span class="token namespace punctuation" style="opacity:0.7;color:#C792EA">::</span><span class="token class-name" style="color:#82AAFF">Builder</span><span class="token punctuation" style="color:#C792EA">::</span><span class="token function" style="color:#82AAFF">default</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token punctuation" style="color:#C792EA">.</span><span class="token function" style="color:#82AAFF">invoke_handler</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token namespace" style="opacity:0.7">tauri</span><span class="token namespace punctuation" style="opacity:0.7;color:#C792EA">::</span><span class="token macro property" style="color:#F78C6C">generate_handler!</span><span class="token punctuation" style="color:#C792EA">[</span><span class="token plain">my_command</span><span class="token punctuation" style="color:#C792EA">]</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token punctuation" style="color:#C792EA">.</span><span class="token function" style="color:#82AAFF">run</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token namespace" style="opacity:0.7">tauri</span><span class="token namespace punctuation" style="opacity:0.7;color:#C792EA">::</span><span class="token macro property" style="color:#F78C6C">generate_context!</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token punctuation" style="color:#C792EA">.</span><span class="token function" style="color:#82AAFF">expect</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token string" style="color:#ECC48D">&quot;error while running tauri application&quot;</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token punctuation" style="color:#C792EA">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token punctuation" style="color:#C792EA">}</span><br></span></code></pre></div></div>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="-src-tauritarget">📁 <code>src-tauri/target/</code><a href="#-src-tauritarget" class="hash-link" aria-label="-src-tauritarget的直接链接" title="-src-tauritarget的直接链接" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>作用</strong>：Rust 编译产物目录。</li>
+<li class=""><strong>来源</strong>：运行 <code>cargo build</code> 或 <code>cargo tauri build</code> 后自动生成。</li>
+<li class=""><strong>注意</strong>：默认会非常大，建议 <code>.gitignore</code> 掉。</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="-src-tauribuildrs">📄 <code>src-tauri/build.rs</code><a href="#-src-tauribuildrs" class="hash-link" aria-label="-src-tauribuildrs的直接链接" title="-src-tauribuildrs的直接链接" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p><strong>作用</strong>：Tauri 构建过程的自定义钩子。</p>
+</li>
+<li class="">
+<p><strong>用途</strong>：</p>
+<ul>
+<li class="">可用于在构建时生成绑定代码、处理资源文件、嵌入环境变量等。</li>
+<li class="">可选项，不需要时可省略。</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="-src-tauricargotoml">📄 <code>src-tauri/Cargo.toml</code><a href="#-src-tauricargotoml" class="hash-link" aria-label="-src-tauricargotoml的直接链接" title="-src-tauricargotoml的直接链接" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p><strong>作用</strong>：Rust 项目的依赖清单。</p>
+</li>
+<li class="">
+<p><strong>内容</strong>：</p>
+<ul>
+<li class="">定义依赖的 crate，例如 <code>tauri</code>, <code>serde</code>, <code>tokio</code> 等。</li>
+<li class="">指定编译设置，如版本、构建脚本。</li>
+</ul>
+</li>
+<li class="">
+<p><strong>示例片段</strong>：</p>
+<div class="language-toml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-toml codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain">[dependencies]</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">tauri = { version = &quot;1.5&quot;, features = [&quot;api-all&quot;] }</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">serde = { version = &quot;1.0&quot;, features = [&quot;derive&quot;] }</span><br></span></code></pre></div></div>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="-src-tauricargolock">📄 <code>src-tauri/Cargo.lock</code><a href="#-src-tauricargolock" class="hash-link" aria-label="-src-tauricargolock的直接链接" title="-src-tauricargolock的直接链接" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>作用</strong>：记录 Rust 项目中每个依赖及其精确版本。</li>
+<li class=""><strong>类似</strong>：等价于 <code>yarn.lock</code> 或 <code>package-lock.json</code>。</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="-src-tauritauriconfjson">📄 <code>src-tauri/tauri.conf.json</code><a href="#-src-tauritauriconfjson" class="hash-link" aria-label="-src-tauritauriconfjson的直接链接" title="-src-tauritauriconfjson的直接链接" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p><strong>作用</strong>：Tauri 应用的主配置文件。</p>
+</li>
+<li class="">
+<p><strong>配置内容</strong>：</p>
+<ul>
+<li class="">窗口标题、尺寸、是否可调整</li>
+<li class="">菜单配置</li>
+<li class="">权限与安全沙箱设置</li>
+<li class="">打包信息（icon、版本号等）</li>
+</ul>
+</li>
+<li class="">
+<p><strong>示例片段</strong>：</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  </span><span class="token property" style="color:#F78C6C">&quot;build&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token property" style="color:#F78C6C">&quot;beforeBuildCommand&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;yarn build&quot;</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token property" style="color:#F78C6C">&quot;distDir&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;../dist&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  </span><span class="token property" style="color:#F78C6C">&quot;tauri&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token property" style="color:#F78C6C">&quot;windows&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">      </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token property" style="color:#F78C6C">&quot;title&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;我的Tauri应用&quot;</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token property" style="color:#F78C6C">&quot;width&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token number" style="color:#F78C6C">800</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token property" style="color:#F78C6C">&quot;height&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token number" style="color:#F78C6C">600</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">      </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token punctuation" style="color:#C792EA">}</span><br></span></code></pre></div></div>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-其他前端相关文件">📄 其他前端相关文件<a href="#-其他前端相关文件" class="hash-link" aria-label="📄 其他前端相关文件的直接链接" title="📄 其他前端相关文件的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-indexhtml">📄 <code>index.html</code><a href="#-indexhtml" class="hash-link" aria-label="-indexhtml的直接链接" title="-indexhtml的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>作用</strong>：前端应用的入口 HTML 文件。</li>
+<li class=""><strong>用途</strong>：Vite/Parcel/Webpack 等工具会将最终资源注入这里。</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-packagejson">📄 <code>package.json</code><a href="#-packagejson" class="hash-link" aria-label="-packagejson的直接链接" title="-packagejson的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>作用</strong>：前端依赖与脚本管理文件。</p>
+</li>
+<li class="">
+<p><strong>包含</strong>：</p>
+<ul>
+<li class="">项目信息（name, version）</li>
+<li class="">依赖库（vue, react, typescript 等）</li>
+<li class="">脚本命令（如 <code>dev</code>, <code>build</code>, <code>tauri dev</code>）</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-viteconfigts">📄 <code>vite.config.ts</code><a href="#-viteconfigts" class="hash-link" aria-label="-viteconfigts的直接链接" title="-viteconfigts的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>作用</strong>：配置 Vite 打包工具的行为。</p>
+</li>
+<li class="">
+<p><strong>可设置内容</strong>：</p>
+<ul>
+<li class="">路径别名、插件、环境变量、构建输出路径等。</li>
+<li class="">通常配置 <code>base</code>, <code>outDir</code>, <code>plugins</code>, <code>resolve.alias</code> 等。</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-tsconfigjson">📄 <code>tsconfig.json</code><a href="#-tsconfigjson" class="hash-link" aria-label="-tsconfigjson的直接链接" title="-tsconfigjson的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>作用</strong>：TypeScript 编译选项配置。</p>
+</li>
+<li class="">
+<p><strong>用途</strong>：</p>
+<ul>
+<li class="">配置模块解析路径、类型检查严格程度等。</li>
+<li class="">可设置路径别名支持 Tauri 调用模块。</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-yarnlock--package-lockjson">📄 <code>yarn.lock</code> / <code>package-lock.json</code><a href="#-yarnlock--package-lockjson" class="hash-link" aria-label="-yarnlock--package-lockjson的直接链接" title="-yarnlock--package-lockjson的直接链接" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>作用</strong>：锁定前端依赖的具体版本，确保团队成员构建一致性。</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-开发流程简要回顾">🔁 开发流程简要回顾<a href="#-开发流程简要回顾" class="hash-link" aria-label="🔁 开发流程简要回顾的直接链接" title="🔁 开发流程简要回顾的直接链接" translate="no">​</a></h2>
+<ol>
+<li class="">
+<p>前端开发：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain">yarn dev           # 启动 Vite 开发服务</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>后端开发 + 前端集成运行：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain">yarn tauri dev     # 同时启动 Tauri 后端 + 前端调试</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>构建发布版本：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain">yarn build         # 构建前端</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">yarn tauri build   # 构建 Tauri 应用（包括可执行文件）</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-总结">✅ 总结<a href="#-总结" class="hash-link" aria-label="✅ 总结的直接链接" title="✅ 总结的直接链接" translate="no">​</a></h2>
+<p>Tauri 项目将 <strong>Rust</strong> 的系统能力与 <strong>现代前端框架</strong>（如 Vue、React）结合，形成了一个 <strong>安全、轻量、高性能</strong> 的桌面应用开发结构。</p>
+<blockquote>
+<p>如果你用 Vue，React 或 Svelte 开发 Web 项目，并想要桌面端落地，Tauri 提供了比 Electron 更轻量的选择。</p>
+</blockquote>
+<p>如需进一步了解 <code>tauri.conf.json</code> 配置项、<code>Rust 后端 API 调用</code>、<code>invoke 机制</code> 等，也可以继续问我。</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/tauri-doc/docs/basic/02"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">环境搭建</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/tauri-doc/docs/basic/04"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">04</div></a></nav></div></div><div class="col col--3"><div class="tocWrapper_xKoj"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#创建" class="table-of-contents__link toc-highlight">创建</a></li><li><a href="#-根目录tauri-app" class="table-of-contents__link toc-highlight">🧾 根目录（<code>tauri-app/</code>）</a><ul><li><a href="#-node_modules" class="table-of-contents__link toc-highlight">📁 <code>node_modules/</code></a></li><li><a href="#-dist" class="table-of-contents__link toc-highlight">📁 <code>dist/</code></a></li><li><a href="#-src" class="table-of-contents__link toc-highlight">📁 <code>src/</code></a></li><li><a href="#-src-tauri-核心目录" class="table-of-contents__link toc-highlight">📁 <code>src-tauri/</code>（🚀 核心目录）</a></li></ul></li><li><a href="#-其他前端相关文件" class="table-of-contents__link toc-highlight">📄 其他前端相关文件</a><ul><li><a href="#-indexhtml" class="table-of-contents__link toc-highlight">📄 <code>index.html</code></a></li><li><a href="#-packagejson" class="table-of-contents__link toc-highlight">📄 <code>package.json</code></a></li><li><a href="#-viteconfigts" class="table-of-contents__link toc-highlight">📄 <code>vite.config.ts</code></a></li><li><a href="#-tsconfigjson" class="table-of-contents__link toc-highlight">📄 <code>tsconfig.json</code></a></li><li><a href="#-yarnlock--package-lockjson" class="table-of-contents__link toc-highlight">📄 <code>yarn.lock</code> / <code>package-lock.json</code></a></li></ul></li><li><a href="#-开发流程简要回顾" class="table-of-contents__link toc-highlight">🔁 开发流程简要回顾</a></li><li><a href="#-总结" class="table-of-contents__link toc-highlight">✅ 总结</a></li></ul></div><div class="tocFooter_Fu2z"><div class="themeGroup_RzWV" role="group" aria-label="Theme"><button class="themeBtn_tGr6" aria-label="Light theme" title="Light"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button><button class="themeBtn_tGr6 themeBtnActive_A6tm" aria-label="Dark theme" title="Dark"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.83 17.963 17.315 22 12.002 22 6.477 22 2 17.523 2 12c0-5.314 4.038-9.827 9.38-10.28z"></path></svg></button></div></div></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Tauri Docs.</div></div></div></footer></div>
+</body>
+</html>

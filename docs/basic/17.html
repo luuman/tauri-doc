@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-basic/17" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">HTTP 客户端 | Tauri Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://luuman.github.io/tauri-doc/docs/basic/17"><meta data-rh="true" property="og:locale" content="zh"><meta data-rh="true" name="docusaurus_locale" content="zh"><meta data-rh="true" name="docsearch:language" content="zh"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="HTTP 客户端 | Tauri Docs"><meta data-rh="true" name="description" content="🧩 插件概述：@tauri-apps/plugin-http"><meta data-rh="true" property="og:description" content="🧩 插件概述：@tauri-apps/plugin-http"><link data-rh="true" rel="icon" href="/tauri-doc/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luuman.github.io/tauri-doc/docs/basic/17"><link data-rh="true" rel="alternate" href="https://luuman.github.io/tauri-doc/docs/basic/17" hreflang="zh"><link data-rh="true" rel="alternate" href="https://luuman.github.io/tauri-doc/docs/basic/17" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HTTP 客户端","item":"https://luuman.github.io/tauri-doc/docs/basic/17"}]}</script><link rel="alternate" type="application/rss+xml" href="/tauri-doc/blog/rss.xml" title="Tauri Docs RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/tauri-doc/blog/atom.xml" title="Tauri Docs Atom Feed"><link rel="stylesheet" href="/tauri-doc/assets/css/styles.c3b0114a.css">
+<script src="/tauri-doc/assets/js/runtime~main.da0e585d.js" defer="defer"></script>
+<script src="/tauri-doc/assets/js/main.9db90204.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"dark"),document.documentElement.setAttribute("data-theme-choice",t||"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav class="navbar navbar--fixed-top navbar_MONK" role="navigation" aria-label="Main"><div class="navbarInner_ASTH"><div class="navbarLeft_pUmY"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="brand_SXL9" href="/tauri-doc/"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="var(--ifm-color-primary)"></rect><path d="M7 8.5h10M7 12h7M7 15.5h10" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg><span class="brandTitle_XbyU">Tauri</span></a><div class="dropdown_GrgZ"><button class="dropdownToggle_Nf_z">全部站点<svg class="dropdownArrow_Eka8" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><ul class="dropdownMenu_zsxH"><li><a href="https://luuman.github.io/docs-workspace/docs" class="dropdownMenuItem_VBaP">Workspace</a></li><li><a href="https://luuman.github.io/moltbot-doc/docs" class="dropdownMenuItem_VBaP">Moltbot</a></li><li><a href="https://luuman.github.io/claude-doc/docs" class="dropdownMenuItem_VBaP">Claude</a></li><li><a href="https://luuman.github.io/electron-doc/docs" class="dropdownMenuItem_VBaP">Electron</a></li><li><a href="https://luuman.github.io/matrx-doc/docs" class="dropdownMenuItem_VBaP">Matrx</a></li><li><a href="https://luuman.github.io/brainboard-doc/docs" class="dropdownMenuItem_VBaP">Brainboard</a></li><li><a href="https://luuman.github.io/synology-doc/docs" class="dropdownMenuItem_VBaP">Synology</a></li><li><a href="https://luuman.github.io/codex-doc/docs" class="dropdownMenuItem_VBaP">Codex</a></li><li><a href="https://luuman.github.io/ai-doc/docs" class="dropdownMenuItem_VBaP">AI</a></li></ul></div></div><div class="navbarCenter_Zdr3"><div class="root_OF3s"><span class="icon_UcOK" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span><div class="slot__FGx"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="搜索" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div class="navbarRight_q16u"><a class="navLink_RnnM" href="/tauri-doc/docs">Docs</a><a class="navLink_RnnM" href="/tauri-doc/blog">Blog</a><button class="themeToggle_zD_x" aria-label="Switch to light theme" title="Light"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button></div></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/tauri-doc/docs/basic/01"><span title="basic" class="categoryLinkLabel_W154">basic</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/01"><span title="Tauri 初探" class="linkLabel_WmDU">Tauri 初探</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/02"><span title="环境搭建" class="linkLabel_WmDU">环境搭建</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/03"><span title="创建项目" class="linkLabel_WmDU">创建项目</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/04"><span title="04" class="linkLabel_WmDU">04</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/05"><span title="集成 WebAssembly" class="linkLabel_WmDU">集成 WebAssembly</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/06"><span title="跨平台编译" class="linkLabel_WmDU">跨平台编译</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/07"><span title="07" class="linkLabel_WmDU">07</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/08"><span title="基本配置" class="linkLabel_WmDU">基本配置</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/09"><span title="透明及磨砂背景" class="linkLabel_WmDU">透明及磨砂背景</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/10"><span title="系统文件" class="linkLabel_WmDU">系统文件</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/11"><span title="应用菜单" class="linkLabel_WmDU">应用菜单</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/12"><span title="开发模式下忽略文件" class="linkLabel_WmDU">开发模式下忽略文件</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/13"><span title="自动通知应用升级" class="linkLabel_WmDU">自动通知应用升级</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/14"><span title="Web URL 与桌面应用的一次邂逅" class="linkLabel_WmDU">Web URL 与桌面应用的一次邂逅</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/15"><span title="15" class="linkLabel_WmDU">15</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/16"><span title="16" class="linkLabel_WmDU">16</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/tauri-doc/docs/basic/17"><span title="HTTP 客户端" class="linkLabel_WmDU">HTTP 客户端</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/18"><span title="18" class="linkLabel_WmDU">18</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/19"><span title="19" class="linkLabel_WmDU">19</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/20"><span title="Splashscreen" class="linkLabel_WmDU">Splashscreen</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/tauri-doc/docs/guide"><span title="开始" class="categoryLinkLabel_W154">开始</span></a><button aria-label="折叠侧边栏分类 &#x27;开始&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/Docment"><span title="Docment" class="linkLabel_WmDU">Docment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/account"><span title="account" class="linkLabel_WmDU">account</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/development-guidelines"><span title="development-guidelines" class="linkLabel_WmDU">development-guidelines</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide"><span title="简介" class="linkLabel_WmDU">简介</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/package"><span title="环境搭建" class="linkLabel_WmDU">环境搭建</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/project-introduction"><span title="project-introduction" class="linkLabel_WmDU">project-introduction</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/project-setup"><span title="创建项目" class="linkLabel_WmDU">创建项目</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/project-structure"><span title="project-structure" class="linkLabel_WmDU">project-structure</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/signature-build"><span title="签名包" class="linkLabel_WmDU">签名包</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tauri-doc/docs"><span title="index" class="linkLabel_WmDU">index</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/tauri-doc/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">basic</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">HTTP 客户端</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>HTTP 客户端</h1></header>
+<p>🧩 插件概述：@tauri-apps/plugin-http
+用于在 Tauri 应用中触发 HTTP 请求，可以在 JS/TS 侧和 Rust 侧使用。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-支持平台">✅ 支持平台<a href="#-支持平台" class="hash-link" aria-label="✅ 支持平台的直接链接" title="✅ 支持平台的直接链接" translate="no">​</a></h2>
+<ul>
+<li class="">✅ Windows / macOS / Linux</li>
+<li class="">✅ iOS / Android（移动端）</li>
+<li class="">需要 Rust ≥ <strong>1.77.2</strong></li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-安装方式">📦 安装方式<a href="#-安装方式" class="hash-link" aria-label="📦 安装方式的直接链接" title="📦 安装方式的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="自动安装推荐">自动安装（推荐）<a href="#自动安装推荐" class="hash-link" aria-label="自动安装（推荐）的直接链接" title="自动安装（推荐）的直接链接" translate="no">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain">pnpm run tauri add http</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="或手动安装">或手动安装<a href="#或手动安装" class="hash-link" aria-label="或手动安装的直接链接" title="或手动安装的直接链接" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="javascripttypescript-项目">JavaScript/TypeScript 项目<a href="#javascripttypescript-项目" class="hash-link" aria-label="JavaScript/TypeScript 项目的直接链接" title="JavaScript/TypeScript 项目的直接链接" translate="no">​</a></h4>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain">pnpm add @tauri-apps/plugin-http</span><br></span></code></pre></div></div>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="rust-依赖在-src-tauricargotoml-中">Rust 依赖（在 <code>src-tauri/Cargo.toml</code> 中）<a href="#rust-依赖在-src-tauricargotoml-中" class="hash-link" aria-label="rust-依赖在-src-tauricargotoml-中的直接链接" title="rust-依赖在-src-tauricargotoml-中的直接链接" translate="no">​</a></h4>
+<div class="language-toml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-toml codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain">[dependencies]</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">tauri-plugin-http = &quot;2&quot;</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-权限配置关键">📁 权限配置（关键）<a href="#-权限配置关键" class="hash-link" aria-label="📁 权限配置（关键）的直接链接" title="📁 权限配置（关键）的直接链接" translate="no">​</a></h2>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token comment" style="color:#637777;font-style:italic">// src-tauri/capabilities/default.json</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  </span><span class="token property" style="color:#F78C6C">&quot;permissions&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">      </span><span class="token property" style="color:#F78C6C">&quot;identifier&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;http:default&quot;</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">      </span><span class="token property" style="color:#F78C6C">&quot;allow&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"> </span><span class="token property" style="color:#F78C6C">&quot;url&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;https://*.tauri.app&quot;</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"> </span><span class="token property" style="color:#F78C6C">&quot;url&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;https://your.api.com&quot;</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"> </span><span class="token property" style="color:#F78C6C">&quot;url&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;http://localhost:3000&quot;</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">      </span><span class="token punctuation" style="color:#C792EA">]</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">      </span><span class="token property" style="color:#F78C6C">&quot;deny&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">[</span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"> </span><span class="token property" style="color:#F78C6C">&quot;url&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;https://private.tauri.app&quot;</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token punctuation" style="color:#C792EA">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  </span><span class="token punctuation" style="color:#C792EA">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token punctuation" style="color:#C792EA">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token string" style="color:#ECC48D">&quot;http:allow-fetch&quot;</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token string" style="color:#ECC48D">&quot;http:allow-fetch-cancel&quot;</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token string" style="color:#ECC48D">&quot;http:allow-fetch-read-body&quot;</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token string" style="color:#ECC48D">&quot;http:allow-fetch-send&quot;</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token property" style="color:#F78C6C">&quot;identifier&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;http:default&quot;</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token property" style="color:#F78C6C">&quot;allow&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token property" style="color:#F78C6C">&quot;url&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;http://**&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token property" style="color:#F78C6C">&quot;url&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;https://**&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token property" style="color:#F78C6C">&quot;url&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;http://*:*&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token property" style="color:#F78C6C">&quot;url&quot;</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;https://*:*&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token punctuation" style="color:#C792EA">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token punctuation" style="color:#C792EA">}</span><span class="token punctuation" style="color:#C792EA">,</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-js-中使用示例">🚀 JS 中使用示例<a href="#-js-中使用示例" class="hash-link" aria-label="🚀 JS 中使用示例的直接链接" title="🚀 JS 中使用示例的直接链接" translate="no">​</a></h2>
+<div class="language-ts codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-ts codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token keyword" style="color:#C792EA">import</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"> fetch </span><span class="token punctuation" style="color:#C792EA">}</span><span class="token plain"> </span><span class="token keyword" style="color:#C792EA">from</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;@tauri-apps/plugin-http&quot;</span><span class="token punctuation" style="color:#C792EA">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token keyword" style="color:#C792EA">const</span><span class="token plain"> response </span><span class="token operator" style="color:#7FDBCA">=</span><span class="token plain"> </span><span class="token keyword" style="color:#C792EA">await</span><span class="token plain"> </span><span class="token function" style="color:#82AAFF">fetch</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token string" style="color:#ECC48D">&quot;https://your.api.com/data&quot;</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">  method</span><span class="token operator" style="color:#7FDBCA">:</span><span class="token plain"> </span><span class="token string" style="color:#ECC48D">&quot;GET&quot;</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token punctuation" style="color:#C792EA">}</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token punctuation" style="color:#C792EA">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token builtin" style="color:#ADDB67">console</span><span class="token punctuation" style="color:#C792EA">.</span><span class="token function" style="color:#82AAFF">log</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token plain">response</span><span class="token punctuation" style="color:#C792EA">.</span><span class="token plain">status</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token punctuation" style="color:#C792EA">;</span><span class="token plain"> </span><span class="token comment" style="color:#637777;font-style:italic">// 200</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token builtin" style="color:#ADDB67">console</span><span class="token punctuation" style="color:#C792EA">.</span><span class="token function" style="color:#82AAFF">log</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token keyword" style="color:#C792EA">await</span><span class="token plain"> response</span><span class="token punctuation" style="color:#C792EA">.</span><span class="token function" style="color:#82AAFF">text</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token punctuation" style="color:#C792EA">;</span><span class="token plain"> </span><span class="token comment" style="color:#637777;font-style:italic">// 返回内容</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-注意事项">⚠️ 注意事项<a href="#️-注意事项" class="hash-link" aria-label="⚠️ 注意事项的直接链接" title="⚠️ 注意事项的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-默认会忽略某些危险请求头如-authorization">❗ 默认会忽略某些“危险”请求头（如 Authorization）<a href="#-默认会忽略某些危险请求头如-authorization" class="hash-link" aria-label="❗ 默认会忽略某些“危险”请求头（如 Authorization）的直接链接" title="❗ 默认会忽略某些“危险”请求头（如 Authorization）的直接链接" translate="no">​</a></h3>
+<p>如果你需要设置 Authorization、User-Agent 等“受保护”的 header，需开启：</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cargotoml-中启用-unsafe-headers-功能">Cargo.toml 中启用 <code>unsafe-headers</code> 功能：<a href="#cargotoml-中启用-unsafe-headers-功能" class="hash-link" aria-label="cargotoml-中启用-unsafe-headers-功能的直接链接" title="cargotoml-中启用-unsafe-headers-功能的直接链接" translate="no">​</a></h3>
+<div class="language-toml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-toml codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token plain">[dependencies]</span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">tauri-plugin-http = { version = &quot;2&quot;, features = [&quot;unsafe-headers&quot;] }</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-rust-侧用法使用-reqwest">🦀 Rust 侧用法（使用 reqwest）<a href="#-rust-侧用法使用-reqwest" class="hash-link" aria-label="🦀 Rust 侧用法（使用 reqwest）的直接链接" title="🦀 Rust 侧用法（使用 reqwest）的直接链接" translate="no">​</a></h2>
+<p>Tauri 插件自动 re-export <code>reqwest</code>，可直接使用：</p>
+<div class="language-rust codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#D6DEEB;--prism-background-color:#001122"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-rust codeBlock_bY9V thin-scrollbar" style="color:#D6DEEB;background-color:#001122"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#D6DEEB"><span class="token keyword" style="color:#C792EA">use</span><span class="token plain"> </span><span class="token namespace" style="opacity:0.7">tauri_plugin_http</span><span class="token namespace punctuation" style="opacity:0.7;color:#C792EA">::</span><span class="token plain">reqwest</span><span class="token punctuation" style="color:#C792EA">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token attribute attr-name" style="color:#ADDB67">#[tauri::command]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token keyword" style="color:#C792EA">async</span><span class="token plain"> </span><span class="token keyword" style="color:#C792EA">fn</span><span class="token plain"> </span><span class="token function-definition function" style="color:#82AAFF">my_fetch</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">-&gt;</span><span class="token plain"> </span><span class="token class-name" style="color:#82AAFF">Result</span><span class="token operator" style="color:#7FDBCA">&lt;</span><span class="token class-name" style="color:#82AAFF">String</span><span class="token punctuation" style="color:#C792EA">,</span><span class="token plain"> </span><span class="token class-name" style="color:#82AAFF">String</span><span class="token operator" style="color:#7FDBCA">&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:#C792EA">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token keyword" style="color:#C792EA">let</span><span class="token plain"> res </span><span class="token operator" style="color:#7FDBCA">=</span><span class="token plain"> </span><span class="token namespace" style="opacity:0.7">reqwest</span><span class="token namespace punctuation" style="opacity:0.7;color:#C792EA">::</span><span class="token function" style="color:#82AAFF">get</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token string" style="color:#ECC48D">&quot;https://my.api.com/data.json&quot;</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token punctuation" style="color:#C792EA">.</span><span class="token keyword" style="color:#C792EA">await</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">        </span><span class="token punctuation" style="color:#C792EA">.</span><span class="token function" style="color:#82AAFF">map_err</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token closure-params closure-punctuation punctuation" style="color:#C792EA">|</span><span class="token closure-params">e</span><span class="token closure-params closure-punctuation punctuation" style="color:#C792EA">|</span><span class="token plain"> e</span><span class="token punctuation" style="color:#C792EA">.</span><span class="token function" style="color:#82AAFF">to_string</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token operator" style="color:#7FDBCA">?</span><span class="token punctuation" style="color:#C792EA">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token keyword" style="color:#C792EA">let</span><span class="token plain"> text </span><span class="token operator" style="color:#7FDBCA">=</span><span class="token plain"> res</span><span class="token punctuation" style="color:#C792EA">.</span><span class="token function" style="color:#82AAFF">text</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token punctuation" style="color:#C792EA">.</span><span class="token keyword" style="color:#C792EA">await</span><span class="token punctuation" style="color:#C792EA">.</span><span class="token function" style="color:#82AAFF">map_err</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token closure-params closure-punctuation punctuation" style="color:#C792EA">|</span><span class="token closure-params">e</span><span class="token closure-params closure-punctuation punctuation" style="color:#C792EA">|</span><span class="token plain"> e</span><span class="token punctuation" style="color:#C792EA">.</span><span class="token function" style="color:#82AAFF">to_string</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token operator" style="color:#7FDBCA">?</span><span class="token punctuation" style="color:#C792EA">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain">    </span><span class="token class-name" style="color:#82AAFF">Ok</span><span class="token punctuation" style="color:#C792EA">(</span><span class="token plain">text</span><span class="token punctuation" style="color:#C792EA">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#D6DEEB"><span class="token plain"></span><span class="token punctuation" style="color:#C792EA">}</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-权限标识参考表默认全部启用">🔐 权限标识参考表（默认全部启用）<a href="#-权限标识参考表默认全部启用" class="hash-link" aria-label="🔐 权限标识参考表（默认全部启用）的直接链接" title="🔐 权限标识参考表（默认全部启用）的直接链接" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Identifier</th><th>含义</th></tr></thead><tbody><tr><td><code>http:allow-fetch</code></td><td>允许 fetch 请求</td></tr><tr><td><code>http:allow-fetch-cancel</code></td><td>支持取消请求</td></tr><tr><td><code>http:allow-fetch-read-body</code></td><td>支持读取响应体</td></tr><tr><td><code>http:allow-fetch-send</code></td><td>支持发送带 body 的请求</td></tr></tbody></table>
+<p>你可以选择精细控制某些权限是否启用。</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-小结常见问题快速定位">✅ 小结：常见问题快速定位<a href="#-小结常见问题快速定位" class="hash-link" aria-label="✅ 小结：常见问题快速定位的直接链接" title="✅ 小结：常见问题快速定位的直接链接" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>问题</th><th>原因与解决方案</th></tr></thead><tbody><tr><td><code>url not allowed on the configured scope</code></td><td>没有在 <code>default.json</code> 中配置允许的 URL</td></tr><tr><td><code>fetch not allowed. Permissions...</code></td><td>没有启用 <code>http:allow-fetch</code> 等权限</td></tr><tr><td>Authorization header 无效</td><td>需要在 <code>Cargo.toml</code> 启用 <code>unsafe-headers</code></td></tr><tr><td>POST 请求失败（body 被忽略）</td><td>需要开启 <code>allow-fetch-send</code> 权限</td></tr></tbody></table>
+<hr>
+<p>如果你提供你实际请求的 URL 和配置，我可以帮你检查是否缺了哪些权限或 URL 配置。是否需要我帮你生成一个完整可用的模板配置？</p>
+<p>在 Tauri 应用中，你可以选择两种方式发起 HTTP 请求：</p>
+<ol>
+<li class=""><strong><code>tauri-plugin-http</code> 插件方式</strong></li>
+<li class=""><strong>Web 端原生 <code>fetch</code>（浏览器 API）方式</strong></li>
+</ol>
+<p>这两者的区别、优势与劣势如下：</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-1-tauri-plugin-http">🔌 1. <code>tauri-plugin-http</code><a href="#-1-tauri-plugin-http" class="hash-link" aria-label="-1-tauri-plugin-http的直接链接" title="-1-tauri-plugin-http的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-优势">✅ 优势<a href="#-优势" class="hash-link" aria-label="✅ 优势的直接链接" title="✅ 优势的直接链接" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>点</th><th>说明</th></tr></thead><tbody><tr><td><strong>绕过 CORS 限制</strong></td><td>作为 Native 层实现的 HTTP 请求，不受浏览器 CORS 限制，可以请求任意接口。适合访问私有 API 或非 CORS 配置的服务。</td></tr><tr><td><strong>支持文件下载/上传等底层特性</strong></td><td>插件支持设置 header、method、body 类型、上传表单、多 part、stream 等，比 <code>fetch</code> 更接近 Node.js 或 curl 的行为。</td></tr><tr><td><strong>更安全/可控</strong></td><td>Tauri 提供作用域控制，可设置白名单，防止任意 URL 被访问（通过 <code>tauri.conf.json &gt; allowlist.http</code>）。</td></tr><tr><td><strong>可跨域访问内网地址</strong></td><td>即使是 <code>.local</code>、<code>.svc</code> 之类的接口，也能请求（如企业内网 API）。</td></tr><tr><td><strong>可更方便进行 SSL pinning</strong></td><td>比如你做 SSL 证书绑定（certificate pinning）场景时，用 Rust 原生库更适合。</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-劣势">❌ 劣势<a href="#-劣势" class="hash-link" aria-label="❌ 劣势的直接链接" title="❌ 劣势的直接链接" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>点</th><th>说明</th></tr></thead><tbody><tr><td><strong>引入 Rust 插件/需配置权限</strong></td><td>必须在 <code>src-tauri</code> 中引入并注册插件，还要配置权限和作用域。</td></tr><tr><td><strong>调试不如 Web fetch 简单</strong></td><td>插件请求出错时定位要查 Tauri Console + Rust Error，比 DevTools 要繁琐。</td></tr><tr><td><strong>体积更大</strong></td><td>会引入额外 Rust crate，如 <code>reqwest</code>，增加二进制大小。</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-2-浏览器原生-fetch">🌐 2. 浏览器原生 <code>fetch</code><a href="#-2-浏览器原生-fetch" class="hash-link" aria-label="-2-浏览器原生-fetch的直接链接" title="-2-浏览器原生-fetch的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-优势-1">✅ 优势<a href="#-优势-1" class="hash-link" aria-label="✅ 优势的直接链接" title="✅ 优势的直接链接" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>点</th><th>说明</th></tr></thead><tbody><tr><td><strong>原生支持，不需额外插件</strong></td><td>开箱即用，直接写 <code>fetch</code> 代码，无需 tauri 插件或 Rust 编译。</td></tr><tr><td><strong>调试方便</strong></td><td>在 DevTools 里查看请求、响应、header、network timeline 都非常方便。</td></tr><tr><td><strong>易于前后端统一代码逻辑</strong></td><td>如果你同时部署 Web 版本与 Tauri 桌面端，使用 fetch 能复用同一套代码（比如用 axios/fetch 封装 API 请求）。</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-劣势-1">❌ 劣势<a href="#-劣势-1" class="hash-link" aria-label="❌ 劣势的直接链接" title="❌ 劣势的直接链接" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>点</th><th>说明</th></tr></thead><tbody><tr><td><strong>受 CORS 限制</strong></td><td>如果目标服务器未设置 <code>Access-Control-Allow-Origin</code>，请求会失败。</td></tr><tr><td><strong>不能访问非浏览器信任域</strong></td><td>如内网域名、没有 HTTPS 的地址、非 80/443 端口等，有时会被拦截。</td></tr><tr><td><strong>不适合做高权限/隐私请求</strong></td><td>比如 SSL pinning、token 注入、绕过代理等情况，fetch 无法满足。</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-总结对比表">📊 总结对比表<a href="#-总结对比表" class="hash-link" aria-label="📊 总结对比表的直接链接" title="📊 总结对比表的直接链接" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>特性</th><th><code>tauri-plugin-http</code></th><th><code>fetch</code></th></tr></thead><tbody><tr><td>是否受 CORS 限制</td><td>❌ 否</td><td>✅ 是</td></tr><tr><td>是否可访问内网地址</td><td>✅ 是</td><td>❌ 否</td></tr><tr><td>请求权限可控</td><td>✅ 强（白名单）</td><td>❌ 弱</td></tr><tr><td>调试体验</td><td>❌ 一般</td><td>✅ 好</td></tr><tr><td>是否需引入插件</td><td>✅ 需要</td><td>❌ 不需要</td></tr><tr><td>是否适合统一 Web/桌面逻辑</td><td>❌ 一般</td><td>✅ 适合</td></tr><tr><td>支持上传文件/流等复杂请求</td><td>✅ 强</td><td>❌ 限制较多</td></tr><tr><td>支持 SSL Pinning</td><td>✅ 可实现</td><td>❌ 不支持</td></tr><tr><td>请求性能</td><td>✅ 原生快</td><td>✅ 浏览器快</td></tr><tr><td>支持跨平台（Win/macOS/Linux）</td><td>✅ 是</td><td>✅ 是，但受浏览器引擎限制</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-建议使用场景">🧠 建议使用场景<a href="#-建议使用场景" class="hash-link" aria-label="🧠 建议使用场景的直接链接" title="🧠 建议使用场景的直接链接" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p>✅ 使用 <code>tauri-plugin-http</code>：</p>
+<ul>
+<li class="">需要绕过 CORS</li>
+<li class="">内网接口或 <code>.local</code>、<code>.svc</code> 域名请求</li>
+<li class="">安全/敏感接口调用（比如 token 登录、登录设备认证）</li>
+<li class="">文件流上传下载（特别是大文件）</li>
+<li class="">需要控制访问白名单、做权限管理</li>
+</ul>
+</li>
+<li class="">
+<p>✅ 使用 <code>fetch</code>：</p>
+<ul>
+<li class="">公网 API，支持 CORS</li>
+<li class="">与 Web 项目共享前端逻辑</li>
+<li class="">调试为主、开发早期阶段</li>
+<li class="">简单的 GET/POST 接口调用</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>如你在开发桌面应用中访问公司私有化部署服务（如 <code>.svc.matrx.tech</code>），<strong>推荐用 <code>tauri-plugin-http</code> 并设置 allowlist</strong>。</p>
+<p>如果你还有具体代码片段或使用场景，我可以帮你选择哪种方式更合适。</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/tauri-doc/docs/basic/16"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">16</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/tauri-doc/docs/basic/18"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">18</div></a></nav></div></div><div class="col col--3"><div class="tocWrapper_xKoj"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#-支持平台" class="table-of-contents__link toc-highlight">✅ 支持平台</a></li><li><a href="#-安装方式" class="table-of-contents__link toc-highlight">📦 安装方式</a><ul><li><a href="#自动安装推荐" class="table-of-contents__link toc-highlight">自动安装（推荐）</a></li><li><a href="#或手动安装" class="table-of-contents__link toc-highlight">或手动安装</a></li></ul></li><li><a href="#-权限配置关键" class="table-of-contents__link toc-highlight">📁 权限配置（关键）</a></li><li><a href="#-js-中使用示例" class="table-of-contents__link toc-highlight">🚀 JS 中使用示例</a></li><li><a href="#️-注意事项" class="table-of-contents__link toc-highlight">⚠️ 注意事项</a><ul><li><a href="#-默认会忽略某些危险请求头如-authorization" class="table-of-contents__link toc-highlight">❗ 默认会忽略某些“危险”请求头（如 Authorization）</a></li><li><a href="#cargotoml-中启用-unsafe-headers-功能" class="table-of-contents__link toc-highlight">Cargo.toml 中启用 <code>unsafe-headers</code> 功能：</a></li></ul></li><li><a href="#-rust-侧用法使用-reqwest" class="table-of-contents__link toc-highlight">🦀 Rust 侧用法（使用 reqwest）</a></li><li><a href="#-权限标识参考表默认全部启用" class="table-of-contents__link toc-highlight">🔐 权限标识参考表（默认全部启用）</a></li><li><a href="#-小结常见问题快速定位" class="table-of-contents__link toc-highlight">✅ 小结：常见问题快速定位</a></li><li><a href="#-1-tauri-plugin-http" class="table-of-contents__link toc-highlight">🔌 1. <code>tauri-plugin-http</code></a><ul><li><a href="#-优势" class="table-of-contents__link toc-highlight">✅ 优势</a></li><li><a href="#-劣势" class="table-of-contents__link toc-highlight">❌ 劣势</a></li></ul></li><li><a href="#-2-浏览器原生-fetch" class="table-of-contents__link toc-highlight">🌐 2. 浏览器原生 <code>fetch</code></a><ul><li><a href="#-优势-1" class="table-of-contents__link toc-highlight">✅ 优势</a></li><li><a href="#-劣势-1" class="table-of-contents__link toc-highlight">❌ 劣势</a></li></ul></li><li><a href="#-总结对比表" class="table-of-contents__link toc-highlight">📊 总结对比表</a></li><li><a href="#-建议使用场景" class="table-of-contents__link toc-highlight">🧠 建议使用场景</a></li></ul></div><div class="tocFooter_Fu2z"><div class="themeGroup_RzWV" role="group" aria-label="Theme"><button class="themeBtn_tGr6" aria-label="Light theme" title="Light"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button><button class="themeBtn_tGr6 themeBtnActive_A6tm" aria-label="Dark theme" title="Dark"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.83 17.963 17.315 22 12.002 22 6.477 22 2 17.523 2 12c0-5.314 4.038-9.827 9.38-10.28z"></path></svg></button></div></div></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Tauri Docs.</div></div></div></footer></div>
+</body>
+</html>

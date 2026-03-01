@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="zh" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-basic/01" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Tauri 初探 | Tauri Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://luuman.github.io/tauri-doc/docs/basic/01"><meta data-rh="true" property="og:locale" content="zh"><meta data-rh="true" name="docusaurus_locale" content="zh"><meta data-rh="true" name="docsearch:language" content="zh"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Tauri 初探 | Tauri Docs"><meta data-rh="true" name="description" content="说到跨平台桌面开发框架，我们可以想到那些框架。"><meta data-rh="true" property="og:description" content="说到跨平台桌面开发框架，我们可以想到那些框架。"><link data-rh="true" rel="icon" href="/tauri-doc/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://luuman.github.io/tauri-doc/docs/basic/01"><link data-rh="true" rel="alternate" href="https://luuman.github.io/tauri-doc/docs/basic/01" hreflang="zh"><link data-rh="true" rel="alternate" href="https://luuman.github.io/tauri-doc/docs/basic/01" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tauri 初探","item":"https://luuman.github.io/tauri-doc/docs/basic/01"}]}</script><link rel="alternate" type="application/rss+xml" href="/tauri-doc/blog/rss.xml" title="Tauri Docs RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/tauri-doc/blog/atom.xml" title="Tauri Docs Atom Feed"><link rel="stylesheet" href="/tauri-doc/assets/css/styles.c3b0114a.css">
+<script src="/tauri-doc/assets/js/runtime~main.da0e585d.js" defer="defer"></script>
+<script src="/tauri-doc/assets/js/main.9db90204.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"dark"),document.documentElement.setAttribute("data-theme-choice",t||"dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav class="navbar navbar--fixed-top navbar_MONK" role="navigation" aria-label="Main"><div class="navbarInner_ASTH"><div class="navbarLeft_pUmY"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="brand_SXL9" href="/tauri-doc/"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="var(--ifm-color-primary)"></rect><path d="M7 8.5h10M7 12h7M7 15.5h10" stroke="white" stroke-width="1.8" stroke-linecap="round"></path></svg><span class="brandTitle_XbyU">Tauri</span></a><div class="dropdown_GrgZ"><button class="dropdownToggle_Nf_z">全部站点<svg class="dropdownArrow_Eka8" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><ul class="dropdownMenu_zsxH"><li><a href="https://luuman.github.io/docs-workspace/docs" class="dropdownMenuItem_VBaP">Workspace</a></li><li><a href="https://luuman.github.io/moltbot-doc/docs" class="dropdownMenuItem_VBaP">Moltbot</a></li><li><a href="https://luuman.github.io/claude-doc/docs" class="dropdownMenuItem_VBaP">Claude</a></li><li><a href="https://luuman.github.io/electron-doc/docs" class="dropdownMenuItem_VBaP">Electron</a></li><li><a href="https://luuman.github.io/matrx-doc/docs" class="dropdownMenuItem_VBaP">Matrx</a></li><li><a href="https://luuman.github.io/brainboard-doc/docs" class="dropdownMenuItem_VBaP">Brainboard</a></li><li><a href="https://luuman.github.io/synology-doc/docs" class="dropdownMenuItem_VBaP">Synology</a></li><li><a href="https://luuman.github.io/codex-doc/docs" class="dropdownMenuItem_VBaP">Codex</a></li><li><a href="https://luuman.github.io/ai-doc/docs" class="dropdownMenuItem_VBaP">AI</a></li></ul></div></div><div class="navbarCenter_Zdr3"><div class="root_OF3s"><span class="icon_UcOK" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span><div class="slot__FGx"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="搜索" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div class="navbarRight_q16u"><a class="navLink_RnnM" href="/tauri-doc/docs">Docs</a><a class="navLink_RnnM" href="/tauri-doc/blog">Blog</a><button class="themeToggle_zD_x" aria-label="Switch to light theme" title="Light"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button></div></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/tauri-doc/docs/basic/01"><span title="basic" class="categoryLinkLabel_W154">basic</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/tauri-doc/docs/basic/01"><span title="Tauri 初探" class="linkLabel_WmDU">Tauri 初探</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/02"><span title="环境搭建" class="linkLabel_WmDU">环境搭建</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/03"><span title="创建项目" class="linkLabel_WmDU">创建项目</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/04"><span title="04" class="linkLabel_WmDU">04</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/05"><span title="集成 WebAssembly" class="linkLabel_WmDU">集成 WebAssembly</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/06"><span title="跨平台编译" class="linkLabel_WmDU">跨平台编译</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/07"><span title="07" class="linkLabel_WmDU">07</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/08"><span title="基本配置" class="linkLabel_WmDU">基本配置</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/09"><span title="透明及磨砂背景" class="linkLabel_WmDU">透明及磨砂背景</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/10"><span title="系统文件" class="linkLabel_WmDU">系统文件</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/11"><span title="应用菜单" class="linkLabel_WmDU">应用菜单</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/12"><span title="开发模式下忽略文件" class="linkLabel_WmDU">开发模式下忽略文件</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/13"><span title="自动通知应用升级" class="linkLabel_WmDU">自动通知应用升级</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/14"><span title="Web URL 与桌面应用的一次邂逅" class="linkLabel_WmDU">Web URL 与桌面应用的一次邂逅</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/15"><span title="15" class="linkLabel_WmDU">15</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/16"><span title="16" class="linkLabel_WmDU">16</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/17"><span title="HTTP 客户端" class="linkLabel_WmDU">HTTP 客户端</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/18"><span title="18" class="linkLabel_WmDU">18</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/19"><span title="19" class="linkLabel_WmDU">19</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/basic/20"><span title="Splashscreen" class="linkLabel_WmDU">Splashscreen</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/tauri-doc/docs/guide"><span title="开始" class="categoryLinkLabel_W154">开始</span></a><button aria-label="折叠侧边栏分类 &#x27;开始&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/Docment"><span title="Docment" class="linkLabel_WmDU">Docment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/account"><span title="account" class="linkLabel_WmDU">account</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/development-guidelines"><span title="development-guidelines" class="linkLabel_WmDU">development-guidelines</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide"><span title="简介" class="linkLabel_WmDU">简介</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/package"><span title="环境搭建" class="linkLabel_WmDU">环境搭建</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/project-introduction"><span title="project-introduction" class="linkLabel_WmDU">project-introduction</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/project-setup"><span title="创建项目" class="linkLabel_WmDU">创建项目</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/project-structure"><span title="project-structure" class="linkLabel_WmDU">project-structure</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tauri-doc/docs/guide/signature-build"><span title="签名包" class="linkLabel_WmDU">签名包</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tauri-doc/docs"><span title="index" class="linkLabel_WmDU">index</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/tauri-doc/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">basic</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Tauri 初探</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>Tauri 初探</h1></header>
+<p>说到跨平台桌面开发框架，我们可以想到那些框架。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>技术/框架</th><th>运行时</th><th>特点</th></tr></thead><tbody><tr><td>Electron</td><td>Node.js + Chromium</td><td>开发简单，生态成熟，但应用体积大。</td></tr><tr><td>Tauri</td><td>Rust + WebView</td><td>轻量高效，体积小，性能优越，适合资源敏感应用。</td></tr><tr><td>Neutralinojs</td><td>Web 技术 + 本地引擎</td><td>轻量级，比 Electron 更小。</td></tr><tr><td>Wails</td><td>Go + Web 技术</td><td>使用 Go 提供后端支持，适合轻量应用开发。</td></tr></tbody></table>
+<p>今天要介绍的Tauri，是一个跨平台 GUI 框架，与 Electron 的思想基本类似。Tauri 的前端实现也是基于 Web 系列语言，Tauri 的后端使用 Rust。Tauri 可以创建体积更小、运行更快、更加安全的跨平台桌面应用。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么选择-rust">为什么选择 Rust？<a href="#为什么选择-rust" class="hash-link" aria-label="为什么选择 Rust？的直接链接" title="为什么选择 Rust？的直接链接" translate="no">​</a></h2>
+<p>Rust 是一门赋予开发者构建可靠且高效软件能力的现代化编程语言。它在高性能、内存安全和开发生产力等方面表现尤为出色。</p>
+<blockquote>
+<p>Rust 的优势</p>
+</blockquote>
+<ol>
+<li class="">
+<p>高性能</p>
+<ul>
+<li class="">Rust 速度惊人，内存利用率极高。</li>
+<li class="">无运行时和垃圾回收，使其能够满足对性能要求苛刻的场景，比如嵌入式设备、系统开发和高性能计算。</li>
+</ul>
+</li>
+<li class="">
+<p>内存安全与线程安全</p>
+<ul>
+<li class="">Rust 通过所有权模型和丰富的类型系统，在编译期就保证了内存安全，彻底消除了悬挂指针、数据竞争等错误。</li>
+<li class="">开发者无需手动管理内存，避免了常见的崩溃和漏洞。</li>
+</ul>
+</li>
+<li class="">
+<p>易于与其他语言集成</p>
+<ul>
+<li class="">Rust 可以与 C/C++、JavaScript 等其他语言轻松集成，适用于跨平台开发和系统扩展。</li>
+<li class="">这让 Rust 在 Tauri 框架中能与前端代码协同工作，实现高效的桌面应用开发。</li>
+</ul>
+</li>
+<li class="">
+<p>出色的开发工具链</p>
+<ul>
+<li class="">Rust 提供了一流的开发工具，包括：
+<ul>
+<li class="">Cargo：包管理器与构建工具。</li>
+<li class="">Clippy：代码规范和静态分析工具。</li>
+<li class="">rustfmt：代码格式化工具。</li>
+</ul>
+</li>
+<li class="">这些工具集成度高，极大地提高了开发效率。</li>
+</ul>
+</li>
+<li class="">
+<p>优秀的编译器与错误提示</p>
+<ul>
+<li class="">Rust 拥有友好的编译器，能在代码编写阶段提供清晰的错误提示，帮助开发者快速定位和解决问题。</li>
+<li class="">编译期消除错误，大幅减少运行时调试的负担。</li>
+</ul>
+</li>
+<li class="">
+<p>生态系统与社区</p>
+<ul>
+<li class="">Rust 拥有丰富的生态系统，广泛的第三方库支持，覆盖从嵌入式开发到 WebAssembly、云原生服务等领域。</li>
+<li class="">活跃的社区为开发者提供了良好的学习资源和问题支持。</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Rust 与 Tauri</p>
+</blockquote>
+<p>Rust 作为 Tauri 的核心语言，充分发挥了上述优势，使 Tauri 成为一款轻量级、高性能的桌面应用开发框架：</p>
+<ul>
+<li class="">Rust 底层绑定提供了快速启动时间和低内存消耗。</li>
+<li class="">开发者可以基于 Rust 扩展 Tauri 默认的 API，实现自定义功能，满足不同项目的需求。</li>
+<li class="">Rust 的安全性和高效性确保了 Tauri 应用在各个平台上的稳定表现。</li>
+</ul>
+<blockquote>
+<p>总结</p>
+</blockquote>
+<p>Rust 之所以成为不二之选，是因为它将性能、安全性和生产力完美结合。基于 Rust 的 Tauri 框架，不仅让开发者能够构建出快速、稳定的桌面应用，还能通过 Rust 的灵活性轻松实现功能定制化。这让 Tauri 和 Rust 成为桌面应用开发领域的强大组合。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="tauri-vs-electron-对比总结">Tauri VS Electron 对比总结<a href="#tauri-vs-electron-对比总结" class="hash-link" aria-label="Tauri VS Electron 对比总结的直接链接" title="Tauri VS Electron 对比总结的直接链接" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>特性</th><th>Tauri</th><th>Electron</th></tr></thead><tbody><tr><td>安装包体积</td><td>3.1 MB (Linux)</td><td>52.1 MB (Linux)</td></tr><tr><td>内存占用</td><td>180 MB (Linux)</td><td>462 MB (Linux)</td></tr><tr><td>启动时间</td><td>0.39s (Linux)</td><td>0.80s (Linux)</td></tr><tr><td>界面服务提供者</td><td>WRY</td><td>Chromium</td></tr><tr><td>后端绑定</td><td>Rust</td><td>Node.js (ECMAScript)</td></tr><tr><td>底层引擎</td><td>Rust</td><td>V8 (C/C++)</td></tr><tr><td>开源许可证 (FLOSS)</td><td>是</td><td>否</td></tr><tr><td>多线程支持</td><td>是</td><td>是</td></tr><tr><td>字节码交付</td><td>是</td><td>否</td></tr><tr><td>多窗口支持</td><td>是</td><td>是</td></tr><tr><td>自动更新</td><td>是</td><td>是</td></tr><tr><td>自定义应用图标</td><td>是</td><td>是</td></tr><tr><td>Windows 二进制支持</td><td>是</td><td>是</td></tr><tr><td>macOS 二进制支持</td><td>是</td><td>是</td></tr><tr><td>Linux 二进制支持</td><td>是</td><td>是</td></tr><tr><td>iOS 二进制支持</td><td>即将支持</td><td>否</td></tr><tr><td>Android 二进制支持</td><td>即将支持</td><td>否</td></tr><tr><td>桌面托盘支持</td><td>是</td><td>是</td></tr><tr><td>Sidecar 二进制支持</td><td>是</td><td>否</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="对比结论">对比结论<a href="#对比结论" class="hash-link" aria-label="对比结论的直接链接" title="对比结论的直接链接" translate="no">​</a></h3>
+<ol>
+<li class="">性能优势：Tauri 在安装包体积、内存占用和启动速度方面明显优于 Electron，非常适合资源敏感型应用。</li>
+<li class="">技术栈差异：Tauri 使用 Rust 作为后端绑定和底层引擎，而 Electron 依赖 Node.js 和 Chromium，导致其资源占用较大。</li>
+<li class="">平台支持：Tauri 在桌面端全面支持 Windows、macOS 和 Linux，并即将支持 iOS 和 Android，具有更广泛的适用性。</li>
+<li class="">开源友好度：Tauri 使用 FLOSS（自由开源软件许可证），对开源项目更加友好。</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="适用场景">适用场景<a href="#适用场景" class="hash-link" aria-label="适用场景的直接链接" title="适用场景的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">Tauri：适用于需要轻量级、快速启动和低资源占用的桌面应用，尤其适合工具类或小型应用。</li>
+<li class="">Electron：适用于开发周期短，生态依赖 Node.js 和 Chromium 的成熟应用，适合功能复杂、依赖大量 Web 技术的项目。</li>
+</ul>
+<p>如果你追求性能和体积优化，同时愿意尝试 Rust 作为后端语言，Tauri 是一个非常值得选择的框架。</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--next" href="/tauri-doc/docs/basic/02"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">环境搭建</div></a></nav></div></div><div class="col col--3"><div class="tocWrapper_xKoj"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#为什么选择-rust" class="table-of-contents__link toc-highlight">为什么选择 Rust？</a></li><li><a href="#tauri-vs-electron-对比总结" class="table-of-contents__link toc-highlight">Tauri VS Electron 对比总结</a><ul><li><a href="#对比结论" class="table-of-contents__link toc-highlight">对比结论</a></li><li><a href="#适用场景" class="table-of-contents__link toc-highlight">适用场景</a></li></ul></li></ul></div><div class="tocFooter_Fu2z"><div class="themeGroup_RzWV" role="group" aria-label="Theme"><button class="themeBtn_tGr6" aria-label="Light theme" title="Light"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"></path></svg></button><button class="themeBtn_tGr6 themeBtnActive_A6tm" aria-label="Dark theme" title="Dark"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.83 17.963 17.315 22 12.002 22 6.477 22 2 17.523 2 12c0-5.314 4.038-9.827 9.38-10.28z"></path></svg></button></div></div></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Tauri Docs.</div></div></div></footer></div>
+</body>
+</html>

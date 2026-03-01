@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdocs_workspace=globalThis.webpackChunkdocs_workspace||[]).push([[22],{20716(o){o.exports=JSON.parse('{"metadata":{"permalink":"/tauri-doc/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
